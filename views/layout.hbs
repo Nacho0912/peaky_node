@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peaky blinders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/bcs.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="images/logopeaky4.png" alt="logo" width="500" height="180">
+        </div>
+    </header>
+    <nav>
+        <ul class="holder">
+            <li><a class="{{#if isinicio}}activo {{/if}}" href="/">inicio</a></li>
+            <li><a class="{{#if ispersonajes}}activo {{/if}}" href="/personajes">personajes</a></li>
+            <li><a class="{{#if isgaleria}}activo {{/if}}" href="/galeria">galeria</a></li>
+            <li><a class="{{#if istemporadas}}activo {{/if}}" href="/temporadas">temporadas</a></li>
+            <li><a class="{{#if iscontacto}}activo {{/if}}" href="/contacto">contacto</a></li>
+            
+        </ul>
+    </nav>
+    <main class="holder">
     {{{body}}}
-  </body>
+  </main>
+    <footer>  
+        <p> Diseñado por Ignacio - 2022</p>
+        <div class="redes">
+            <ul>
+               <li> <a href="https://www.facebook.com/PeakyBlinders"><img src="images/iconos para header/facebook.png" alt="facebook" width="45" height="45"></a></li>
+                <li> <a href="https://www.instagram.com/peakyblindersofficial/"><img src="images/iconos para header/instagram-removebg-preview.png" alt="facebook" width="45" height="45"></a></li>
+                <li> <a href="https://twitter.com/ThePeakyBlinder"><img src="images/iconos para header/twitter-removebg-preview.png" alt="facebook" width="45" height="45"></a></li>
+                <li> <a href="https://www.whatsapp.com/"><img src="images/iconos para header/WhatsApp-removebg-preview.png " alt="facebook" width="45" height="45"></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
+</body>
 </html>
