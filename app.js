@@ -11,7 +11,7 @@ var personajesRouter = require("./routes/personajes");
 var galeriaRouter = require("./routes/galeria");
 var temporadasRouter = require("./routes/temporadas");
 var contactoRouter = require("./routes/contacto");
-
+var loginRouter = require("./routes/admin/login");
 
 var app = express();
 
@@ -30,6 +30,8 @@ app.use('/personajes', personajesRouter);
 app.use('/galeria', galeriaRouter);
 app.use('/temporadas', temporadasRouter);
 app.use('/contacto', contactoRouter);
+app.use('/admin/login', loginRouter);
+
 
 
 // catch 404 and forward to error handler
