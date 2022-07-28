@@ -13,6 +13,8 @@ var temporadasRouter = require("./routes/temporadas");
 var contactoRouter = require("./routes/contacto");
 var loginRouter = require("./routes/admin/login");
 
+
+
 var app = express();
 
 // view engine setup
@@ -25,12 +27,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+
 app.use('/', indexRouter);
 app.use('/personajes', personajesRouter);
 app.use('/galeria', galeriaRouter);
 app.use('/temporadas', temporadasRouter);
 app.use('/contacto', contactoRouter);
 app.use('/admin/login', loginRouter);
+
+
+
 
 
 
