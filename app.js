@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require("dotenv").config();
+var session = require("express-session")
 
 var indexRouter = require('./routes/index');
 var personajesRouter = require("./routes/personajes");
@@ -12,7 +13,10 @@ var galeriaRouter = require("./routes/galeria");
 var temporadasRouter = require("./routes/temporadas");
 var contactoRouter = require("./routes/contacto");
 var loginRouter = require("./routes/admin/login");
-
+var adminRouter = require("./routes/admin/inicio");
+// const session = require('express-session');
+// const { Cookie } = require('express-session');
+// const { secureHeapUsed } = require('crypto');
 
 
 var app = express();
@@ -27,8 +31,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret:"jlkjfsjldkfnsd989",
+  // Cookie:{maxage:null},
+  resave:false,
+  saveUninitialized:true
+}))
 
-
+secured = async (req,res,next) => {
+  try{
+    // console.log(req.session.id_usuario);   
+    if (req.session.id_usuario) {
+      next();
+    } else{
+      res.redirect("/admin/login")
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 app.use('/', indexRouter);
 app.use('/personajes', personajesRouter);
@@ -36,8 +57,7 @@ app.use('/galeria', galeriaRouter);
 app.use('/temporadas', temporadasRouter);
 app.use('/contacto', contactoRouter);
 app.use('/admin/login', loginRouter);
-
-
+app.use("/admin/inicio", secured, adminRouter);
 
 
 
