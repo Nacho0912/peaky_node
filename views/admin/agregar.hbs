@@ -2,7 +2,7 @@
     <div class="rows">
         <div class="col">
             <h2>Agregar una nueva novedad</h2>
-            <form action="admin/novedades/agregar" method="post">
+            <form action="/admin/novedades/agregar" method="post">
                 <div class="mb-3">
                     <label for="" class="form-label">Titulo</label>
                 <input type="text" class="form-control"  name="titulo">
@@ -20,7 +20,10 @@
                         <div class="col-auto">
                     <button type="submit" class="btn btn-secondary btn-lg">guardar</button>
                 </div>
-            </form>    
+            </form>
+            {{#if error}}  
+            <p>{{message}}</p>
+            {{/if}}  
         </div>
     </div>
 </div>
