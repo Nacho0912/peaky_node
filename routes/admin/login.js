@@ -1,4 +1,5 @@
 var express = require('express');
+const { raw } = require('mysql');
 var router = express.Router();
 var usuariosModel = require("./../../models/usuariosModel")
 
@@ -6,6 +7,13 @@ router.get("/",function(req,res,next){
     res.render("admin/login",{
         layout:"admin/layout"
     });
+})
+
+router.get("/logout", function(req,res,next){
+req.session.destroy();
+res.render("admin/login",{
+    layout:"admin/layout"
+})
 })
 
 router.post("/", async function(req,res,next){
@@ -28,12 +36,12 @@ router.post("/", async function(req,res,next){
                 error:true
             })
         }
-
-
      }catch(error){
         console.log(error)
      }
 });
+
+
 
 
 module.exports = router;
