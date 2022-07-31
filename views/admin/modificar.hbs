@@ -1,7 +1,7 @@
 <div class="container margenes">
     <div class="rows">
         <div class="col">
-            <h2>Modificar novedad {{novedad.id}}</h2>
+            <h2 class="blanco">Modificar novedad {{novedad.id}}</h2>
 
             <form action="/admin/novedades/modificar" method="post">
             <input type="hidden" value="{{novedad.id}}" name="id">  
@@ -24,7 +24,7 @@
                 </div>
             </form>
             {{#if error}}  
-            <p>{{message}}</p>
+            <p class="mensaje5">{{message}}</p>
             {{/if}}  
         </div>
     </div>

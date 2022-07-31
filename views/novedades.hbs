@@ -1,24 +1,12 @@
-<div class="text">
- <h2>Novedades peaky blinders</h2>
- <div>
-    <h3>Novedad 1</h3>
-    <h4>subtitulo</h4>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatum saepe autem officiis enim inventore molestiae iusto magnam minus, tempora, repellendus corporis optio praesentium cum quo distinctio aliquam similique voluptate!
-    Amet quibusdam libero architecto quis! Voluptas nostrum, tempora neque velit quisquam fugit, vel pariatur optio reiciendis excepturi possimus vero aspernatur distinctio sed, ab obcaecati quos atque! Ratione numquam nemo quo.</p>
-    <hr>
-  </div>
- <div>
-    <h3>Novedad 2</h3>
-    <h4>subtitulo</h4>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatum saepe autem officiis enim inventore molestiae iusto magnam minus, tempora, repellendus corporis optio praesentium cum quo distinctio aliquam similique voluptate!
-    Amet quibusdam libero architecto quis! Voluptas nostrum, tempora neque velit quisquam fugit, vel pariatur optio reiciendis excepturi possimus vero aspernatur distinctio sed, ab obcaecati quos atque! Ratione numquam nemo quo.</p>
-    <hr>
- </div>
- <div>
-    <h3>Novedad 3</h3>
-    <h4>subtitulo</h4>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatum saepe autem officiis enim inventore molestiae iusto magnam minus, tempora, repellendus corporis optio praesentium cum quo distinctio aliquam similique voluptate!
-    Amet quibusdam libero architecto quis! Voluptas nostrum, tempora neque velit quisquam fugit, vel pariatur optio reiciendis excepturi possimus vero aspernatur distinctio sed, ab obcaecati quos atque! Ratione numquam nemo quo.</p>
+   <div class="text">
+ <h2>Novedades</h2>
+ {{#each novedades}}
+ <div class="novedades">
+    <h3>{{titulo}}</h3>
+    <h4>{{subtitulo}}</h4>
+    <p>{{cuerpo}}</p>
     <hr>
  </div>
 </div>
+{{/each}}
+

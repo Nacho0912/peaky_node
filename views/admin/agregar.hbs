@@ -1,7 +1,7 @@
 <div class="container margenes">
     <div class="rows">
         <div class="col">
-            <h2>Agregar una nueva novedad</h2>
+            <h2 class="blanco">Agregar una nueva novedad</h2>
             <form action="/admin/novedades/agregar" method="post">
                 <div class="mb-3">
                     <label for="" class="form-label">Titulo</label>
@@ -22,7 +22,7 @@
                 </div>
             </form>
             {{#if error}}  
-            <p>{{message}}</p>
+            <p class="mensaje5">{{message}}</p>
             {{/if}}  
         </div>
     </div>
