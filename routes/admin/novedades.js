@@ -36,9 +36,15 @@ try{
         layout:"admin/layout",
         error:true,
         message: "no se cargo la novedad"
-    })
-
-}
+        })
+    }
 })
+
+    router.get("/eliminar/:id", async (req,res,next)=>{
+        //console.log(req.params.id);
+        var id = req.params.id;
+        await novedadesModel.deleteNovedadByID(id)
+        res.redirect("/admin/novedades")
+    })
 
 module.exports = router;
