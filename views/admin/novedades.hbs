@@ -10,7 +10,7 @@
             <h2>listado de novedades</h2>
     </div>
     <div class="col-5 text-end">
-        <a href="" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> nuevo</a>
+        <a href="/admin/novedades/agregar" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> nuevo</a>
     </div>
 </div>
 
@@ -18,20 +18,23 @@
         <div class="col">
             <table class="table">
   <thead>
-    <tr>
+    <tr class="table-dark">
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">titulo</th>
+      <th scope="col" class="text-end">acciones</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    {{#each novedades}}
+    <tr class="table-light">
+      <th scope="row">{{id}}</th>
+      <td>{{titulo}}</td>
+      <td class="text-end">
+        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+        <a href=""><i class="fa-solid fa-trash-can"></i></a>
+      </td>
     </tr>
+    {{/each}}
   </tbody>
 </table>
 

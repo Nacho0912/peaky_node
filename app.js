@@ -12,8 +12,9 @@ var personajesRouter = require("./routes/personajes");
 var galeriaRouter = require("./routes/galeria");
 var temporadasRouter = require("./routes/temporadas");
 var contactoRouter = require("./routes/contacto");
+var novedadesRouter = require("./routes/novedades");
 var loginRouter = require("./routes/admin/login");
-var adminRouter = require("./routes/admin/inicio");
+var adminRouter = require("./routes/admin/novedades");
 // const session = require('express-session');
 // const { Cookie } = require('express-session');
 // const { secureHeapUsed } = require('crypto');
@@ -56,8 +57,9 @@ app.use('/personajes', personajesRouter);
 app.use('/galeria', galeriaRouter);
 app.use('/temporadas', temporadasRouter);
 app.use('/contacto', contactoRouter);
+app.use("/novedades", novedadesRouter);
 app.use('/admin/login', loginRouter);
-app.use("/admin/inicio", secured, adminRouter);
+app.use("/admin/novedades", secured, adminRouter);
 
 
 
